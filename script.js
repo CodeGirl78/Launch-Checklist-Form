@@ -37,8 +37,8 @@ window.addEventListener("load", function() {
                alert("Please enter a valid number for Fuel Level or Cargo Mass (or both)");
                event.preventDefault();
             } else {
-               document.getElementById("pilotStatus").innerHTML = "Pilot " + pilotInput.value + " Ready";
-               document.getElementById("copilotStatus").innerHTML = "Co-pilot " + copilotInput.value + " Ready";
+               document.getElementById("pilotStatus").innerHTML = "Pilot " + pilotInput.value + " is ready for launch";
+               document.getElementById("copilotStatus").innerHTML = "Co-pilot " + copilotInput.value + " is ready for launch";
                if (fuelLevelInput.value <= 10000) {
                   document.getElementById("faultyItems").style.visibility = "visible";
                   document.getElementById("launchStatus").innerHTML = "Shuttle Not Ready for Launch";
