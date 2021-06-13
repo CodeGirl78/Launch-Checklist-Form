@@ -28,13 +28,13 @@ window.addEventListener("load", function() {
             console.log(pilotInput.value);
       
     if ((pilotInput.value === '')|| (copilotInput.value === '')||(fuelLevelInput.value === '') || (cargoMassInput.value === '')) {
-               alert("All fields are required.  Please enter all information");
+               alert("All fields are required!  Please enter all information.");
                event.preventDefault();
             } else if (isNaN(pilotInput.value) === false || isNaN(copilotInput.value) === false) {
-               alert("Please enter a valid name for Pilot Name or Co-pilot Name (or both)");
+               alert("Please enter a valid name for Pilot Name and/or Co-pilot Name.");
                event.preventDefault();
             } else if (isNaN(fuelLevelInput.value) === true || isNaN(cargoMassInput.value) === true) {
-               alert("Please enter a valid number for Fuel Level or Cargo Mass (or both)");
+               alert("Please enter a valid number for Fuel Level and/or Cargo Mass.");
                event.preventDefault();
             } else {
                document.getElementById("pilotStatus").innerHTML = "Pilot " + pilotInput.value + " is ready for launch";
