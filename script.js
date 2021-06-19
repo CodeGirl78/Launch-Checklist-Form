@@ -21,6 +21,7 @@ window.addEventListener("load", function() {
    
    let form = document.querySelector("form");
          form.addEventListener("submit", function(event) {
+            event.preventDefault();
             let pilotInput = document.querySelector("input[name=pilotName]");
             let copilotInput = document.querySelector("input[name=copilotName]");
             let fuelLevelInput = document.querySelector("input[name=fuelLevel]");
@@ -28,14 +29,11 @@ window.addEventListener("load", function() {
             console.log(pilotInput.value);
       
     if ((pilotInput.value === '')|| (copilotInput.value === '')||(fuelLevelInput.value === '') || (cargoMassInput.value === '')) {
-               alert("All fields are required!  Please enter all information.");
-               event.preventDefault();
+               alert("All fields are required!  Please enter all information.");            
             } else if (isNaN(pilotInput.value) === false || isNaN(copilotInput.value) === false) {
-               alert("Please enter a valid name for Pilot Name and/or Co-pilot Name.");
-               event.preventDefault();
+               alert("Please enter a valid name for Pilot Name and/or Co-pilot Name.");               
             } else if (isNaN(fuelLevelInput.value) === true || isNaN(cargoMassInput.value) === true) {
-               alert("Please enter a valid number for Fuel Level and/or Cargo Mass.");
-               event.preventDefault();
+               alert("Please enter a valid number for Fuel Level and/or Cargo Mass.");               
             } else {
                document.getElementById("pilotStatus").innerHTML = "Pilot " + pilotInput.value + " is ready for launch";
                document.getElementById("copilotStatus").innerHTML = "Co-pilot " + copilotInput.value + " is ready for launch";
@@ -61,7 +59,6 @@ window.addEventListener("load", function() {
                   document.getElementById("cargoStatus").innerHTML = "Cargo mass low enough for launch";
                   document.getElementById("faultyItems").style.visibility = "hidden";
                }
-               event.preventDefault();
             }
          });
       });
